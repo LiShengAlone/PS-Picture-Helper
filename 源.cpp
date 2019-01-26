@@ -1,11 +1,11 @@
 /**********************************************
-ÎÄ¼şÃû³Æ£ºmain.cpp
-ÎÄ¼şÃèÊö£ºÊµÏÖ¼òµ¥PS
-±àÒë»·¾³£ºVS2008-VS2017  VC6.0
-×îºóĞŞ¸Ä£º
-<2017Äê12ÔÂ31ÈÕ>  <´´½¨¹¤³Ì>  <Áõ¶Ø»Ô>
+æ–‡ä»¶åç§°ï¼šmain.cpp
+æ–‡ä»¶æè¿°ï¼šå®ç°ç®€å•PS
+ç¼–è¯‘ç¯å¢ƒï¼šVS2008-VS2017  VC6.0
+æœ€åä¿®æ”¹ï¼š
+<2017å¹´12æœˆ31æ—¥>  <åˆ›å»ºå·¥ç¨‹>
 **********************************************/
-//ÏñËØ£ºÍ¼ÏñµÄ×îĞ¡µ¥Î»£¬ÓĞµ¥Ò»µÄÑÕÉ«´¿ÔÚ
+//åƒç´ ï¼šå›¾åƒçš„æœ€å°å•ä½ï¼Œæœ‰å•ä¸€çš„é¢œè‰²çº¯åœ¨
 #include<graphics.h>
 #include<conio.h>
 
@@ -20,10 +20,10 @@ IMAGE img;
 int main()
 {
 	InitPS();
-	TCHAR s[] = _T("Ñ¡ÔñÍ¼Æ¬q»òwºÍ½øĞĞµÄ´¦Àía,b,c:");
-	TCHAR d[] = _T("a.ÂíÈü¿Ë");
-	TCHAR f[] = _T("b.µ×Æ¬Ğ§¹û");
-	TCHAR g[] = _T("c.»Ò¶ÈĞ§¹û");
+	TCHAR s[] = _T("é€‰æ‹©å›¾ç‰‡qæˆ–wå’Œè¿›è¡Œçš„å¤„ç†a,b,c:");
+	TCHAR d[] = _T("a.é©¬èµ›å…‹");
+	TCHAR f[] = _T("b.åº•ç‰‡æ•ˆæœ");
+	TCHAR g[] = _T("c.ç°åº¦æ•ˆæœ");
 	TCHAR h[] = _T("d.");
 	setbkmode(0);
 	settextcolor(BLUE);
@@ -61,14 +61,14 @@ int main()
 VOID InitPS()
 {
 	initgraph(640, 480);
-	loadimage(&img, L"Ò»Ìì.jpg", 640, 480);
+	loadimage(&img, L"ä¸€å¤©.jpg", 640, 480);
 	putimage(0, 0, &img);
 }
 
 
-//ÂíÈü¿Ë  pimg:Í¼Æ¬µØÖ· 
-//tilesize£ºĞ¡·½¿éµÄ³ß´ç
-//starx£¬starty£ºÆğÊ¼×ø±ê
+//é©¬èµ›å…‹  pimg:å›¾ç‰‡åœ°å€ 
+//tilesizeï¼šå°æ–¹å—çš„å°ºå¯¸
+//starxï¼Œstartyï¼šèµ·å§‹åæ ‡
 VOID MaSaiKe(IMAGE*pimg, int tilesize, int startx, int starty)
 {
 	int width = pimg->getwidth();
@@ -76,11 +76,11 @@ VOID MaSaiKe(IMAGE*pimg, int tilesize, int startx, int starty)
 
 	int redsum, greensum, bluesum;
 
-	int count;//Ã¿Ò»¸öĞ¡·½¿éÖĞµÄÏñËØÊıÁ¿
-	int color;//Ã¿Ò»¸öÏñËØµÄÑÕÉ«
+	int count;//æ¯ä¸€ä¸ªå°æ–¹å—ä¸­çš„åƒç´ æ•°é‡
+	int color;//æ¯ä¸€ä¸ªåƒç´ çš„é¢œè‰²
 	int x, y, tx, ty;
 
-	DWORD*PMem = GetImageBuffer(pimg);//»ñÈ¡Ö¸ÏòÏÔ´æµÄÖ¸Õë
+	DWORD*PMem = GetImageBuffer(pimg);//è·å–æŒ‡å‘æ˜¾å­˜çš„æŒ‡é’ˆ
 
 	startx = (startx%tilesize == 0 ? 0 : startx%tilesize - tilesize);//0,0
 	starty = (starty%tilesize == 0 ? 0 : starty%tilesize - tilesize);
